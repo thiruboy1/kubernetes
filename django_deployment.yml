@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django-deployment
+  labels:
+    app: django-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: django-app
+  template:
+    metadata:
+      labels:
+        app: django-app
+    spec:
+      containers:
+      - name: django-app
+        image: thiruboy1/django:v3
+        ports:
+        - containerPort: 8001
+        volumeMounts:
+        - name: data
+          mountPath: /var/www/html   
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: django-nfs
+
