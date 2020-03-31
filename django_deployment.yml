@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: django-app
-        image: thiruboy1/django:v32
+        image: thiruboy1/django:v33
         ports:
         - containerPort: 8001
         imagePullPolicy: Always
