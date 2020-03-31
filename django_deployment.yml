@@ -19,6 +19,7 @@ spec:
         image: thiruboy1/django:v32
         ports:
         - containerPort: 8001
+        imagePullPolicy: Always
         volumeMounts:
         - name: data
           mountPath: /var/www/html   
