@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: django-app
-        image: thiruboy1/django:v4
+        image: thiruboy1/django
         ports:
         - containerPort: 8001
         volumeMounts:
